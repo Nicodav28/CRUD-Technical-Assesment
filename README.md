@@ -28,7 +28,7 @@ cp .env.example .env
 ```
 Edita el archivo `.env` y asegúrate de configurar los valores correctos, especialmente la conexión a la base de datos:
 ```env
-DB_CONNECTION=mysql
+DB_CONNECTION=pgsql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=crud_technical_assesment
