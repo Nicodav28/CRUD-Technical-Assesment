@@ -71,11 +71,6 @@ php artisan serve
 ```
 Por defecto, la aplicación se ejecutará en `http://127.0.0.1:8000`
 
-Si el proyecto usa Vite para el frontend, también ejecuta:
-```sh
-npm run dev
-```
-
 ## 8. Acceder a la Aplicación
 Ahora puedes acceder a la aplicación en tu navegador en `http://127.0.0.1:8000`
 
