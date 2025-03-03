@@ -4,52 +4,43 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateEmployeeRequest;
 use App\Http\Requests\UpdateEmployeeRequest;
-use App\Models\Employee;
-use Illuminate\Http\Request;
+use App\Services\EmployeeService;
+use App\Utils\ApiResponser;
+use Illuminate\Http\JsonResponse;
 
 class EmployeeController
 {
-    public function index()
+    public function __construct(protected readonly EmployeeService $employeeService)
     {
-        $employees = Employee::all();
-        return view('employees.index', compact('employees'));
     }
 
-    public function store(CreateEmployeeRequest $request)
+    public function view()
     {
-        $employee = Employee::create($request->all());
-        return response()->json([ 'message' => 'Empleado agregado', 'employee' => $employee ]);
+        return view('employees.index');
     }
 
-    public function edit(int $id)
+    public function index(): JsonResponse
     {
-        $employee = Employee::findOrFail($id);
-        return response()->json($employee);
+        return $this->employeeService->getAllEmployees();
     }
 
-    public function update(UpdateEmployeeRequest $request, int $id)
+    public function store(CreateEmployeeRequest $request): JsonResponse
     {
-        $employee = Employee::findOrFail($id);
-        $employee->update($request->all());
-        return response()->json([ 'message' => 'Empleado actualizado', 'employee' => $employee ]);
+        return $this->employeeService->createEmployee($request->validated());
     }
 
-    public function destroy(int $id)
+    public function show(int $id): JsonResponse
     {
-        Employee::destroy($id);
-        return response()->json([ 'message' => 'Empleado eliminado' ]);
+        return $this->employeeService->getEmployeeById($id);
     }
 
-    public function search(Request $request)
+    public function update(UpdateEmployeeRequest $request, int $id): JsonResponse
     {
-        $search = $request->search;
-
-        $employees = Employee::where('name', 'like', "%$search%")
-            ->orWhere('email', 'like', "%$search%")
-            ->get();
-
-        return view('employee', compact('employees'));
+        return $this->employeeService->updateEmployee($id, $request->validated());
     }
 
-
+    public function destroy(int $id): JsonResponse
+    {
+        return $this->employeeService->deleteEmployee($id);
+    }
 }

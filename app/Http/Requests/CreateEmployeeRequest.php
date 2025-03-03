@@ -22,7 +22,14 @@ class CreateEmployeeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nombre'      => 'required|string|max:255',
+            'email'       => 'required|email|unique:employees,email',
+            'sexo'        => 'required|in:M,F',
+            'area_id'     => 'required|exists:areas,id',
+            'descripcion' => 'required|string',
+            'boletin'     => 'required',
+            'roles'       => 'required|array|min:1',
+            'roles.*'     => 'exists:roles,id'
         ];
     }
 }
