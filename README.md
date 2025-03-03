@@ -12,8 +12,8 @@ Asegúrate de tener instalado lo siguiente:
 ## 1. Clonar el Repositorio
 Clona este repositorio en tu máquina local:
 ```sh
-git clone https://github.com/tu-usuario/tu-repositorio.git
-cd tu-repositorio
+git clone https://github.com/Nicodav28/CRUD-Technical-Assesment.git
+cd CRUD-Technical-Assesment
 ```
 
 ## 2. Instalar Dependencias
