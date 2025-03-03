@@ -7,8 +7,7 @@ Asegúrate de tener instalado lo siguiente:
 - **PHP** (versión 8.0 o superior)
 - **Composer** (https://getcomposer.org/)
 - **Laravel** (puedes instalarlo globalmente con `composer global require laravel/installer`)
-- **MySQL** o **PostgreSQL** (dependiendo de la configuración del proyecto)
-- **Node.js y NPM** (si el proyecto usa frontend con Vite o Laravel Mix)
+- **MySQL** o **PostgreSQL**
 
 ## 1. Clonar el Repositorio
 Clona este repositorio en tu máquina local:
@@ -32,8 +31,8 @@ Edita el archivo `.env` y asegúrate de configurar los valores correctos, especi
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=nombre_de_tu_base_de_datos
-DB_USERNAME=tu_usuario
+DB_DATABASE=crud_technical_assesment
+DB_USERNAME=postgres
 DB_PASSWORD=tu_contraseña
 ```
 
