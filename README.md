@@ -52,20 +52,14 @@ php artisan db:seed --class=RoleSeeder
 ```
 Esto creará las tablas y poblará la base de datos con datos de prueba si los seeders están configurados.
 
-## 6. Configurar Permisos (Opcional)
-Si tu aplicación utiliza almacenamiento local, asegúrate de que Laravel tenga permisos adecuados:
-```sh
-chmod -R 775 storage bootstrap/cache
-```
-
-## 7. Ejecutar el Servidor de Desarrollo
+## 6. Ejecutar el Servidor de Desarrollo
 Inicia el servidor de Laravel con:
 ```sh
 php artisan serve
 ```
 Por defecto, la aplicación se ejecutará en `http://127.0.0.1:8000`
 
-## 8. Acceder a la Aplicación
+## 7. Acceder a la Aplicación
 Ahora puedes acceder a la aplicación en tu navegador en `http://127.0.0.1:8000`
 
 ---
