@@ -22,12 +22,6 @@ Ejecuta el siguiente comando para instalar las dependencias de Laravel:
 ```sh
 composer install
 ```
-
-Si el proyecto usa frontend con Laravel Mix o Vite, instala las dependencias de JavaScript:
-```sh
-npm install
-```
-
 ## 3. Configurar Variables de Entorno
 Copia el archivo de configuración de entorno:
 ```sh
